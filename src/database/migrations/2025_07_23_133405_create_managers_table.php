@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('contact_email', 100);
             $table->string('contact_phone', 20);
             $table->foreignId('club_id')->constrained()->onDelete('cascade');
+            $table->string('api_token');
             $table->timestamps();
         });
     }

@@ -3,7 +3,6 @@
 namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\ManagerResource\Pages;
-use App\Filament\Admin\Resources\ManagerResource\RelationManagers;
 use App\Models\Manager;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -14,8 +13,6 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ManagerResource extends Resource
 {
@@ -49,6 +46,11 @@ class ManagerResource extends Resource
             TextColumn::make('birth_date')->date('d M Y'),
             TextColumn::make('experience_years'),
             TextColumn::make('club.name')->label('Club'),
+            TextColumn::make('api_token')
+                ->label('API Token')
+                ->copyable()
+                ->copyMessage('Token copied to clipboard!')
+                ->copyMessageDuration(1500),
         ])->filters([]);
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,11 @@ Route::middleware('client.auth')->group(function () {
     Route::get('/players/{id}', [PlayerController::class, 'show']);
     Route::put('/players/{id}', [PlayerController::class, 'update']);
     Route::delete('/players/{id}', [PlayerController::class, 'destroy']);
+    
+    // Manager-related routes
+    Route::get('/managers', [ManagerController::class, 'index']);
+    Route::post('/managers', [ManagerController::class, 'store']);
+    Route::get('/managers/{id}', [ManagerController::class, 'show']);
+    Route::put('/managers/{id}', [ManagerController::class, 'update']);
+    Route::delete('/managers/{id}', [ManagerController::class, 'destroy']);
 });

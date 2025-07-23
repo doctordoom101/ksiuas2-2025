@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Manager extends Model
 {
@@ -20,9 +21,16 @@ class Manager extends Model
         'club_id',
     ];
 
+    protected static function boot() {
+        parent::boot();
+
+        static::creating(function ($manager) {
+            $manager->api_token = Str::random(5);
+        });
+    }
+
     public function club()
     {
         return $this->belongsTo(Club::class);
     }
 }
-

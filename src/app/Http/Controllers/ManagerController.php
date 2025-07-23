@@ -10,8 +10,10 @@ class ManagerController extends Controller
 {
     public function index(Request $request)
     {
-        $manager = Manager::all(); // Ambil semua manager
-        $encryptedResponse = EncryptionHelper::encrypt(json_encode($manager));
+        $manager = $request->get('authenticated_manager');
+        $data = $manager->get();
+        $encryptedResponse = EncryptionHelper::encrypt(json_encode($data));
+
         return response()->json(['data' => $encryptedResponse]);
     }
 }
