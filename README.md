@@ -38,8 +38,7 @@ Dalam industri sepak bola profesional, data klub, pemain, dan manajer sangat pen
 - Autentikasi API Token (future use)
 
 ### **2.3. Struktur Tabel (ERD)**
-
-![Untitled (9).png](attachment:de0aaff1-c297-4689-bf3c-d0b949ca7ae6:Untitled_(9).png)
+![ERD](img/erd.png)
 
 ERD ini menggambarkan hubungan antara entitas *Club*, *Player*, dan *Manager* dalam sebuah sistem manajemen klub sepak bola. Setiap klub memiliki pemain dan manajer yang berelasi langsung dengannya.
 
