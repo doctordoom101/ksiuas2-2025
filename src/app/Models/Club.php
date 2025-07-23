@@ -28,4 +28,9 @@ class Club extends Model
     {
         return $this->hasMany(Player::class);
     }
+
+    public function managers()
+    {
+        return $this->hasMany(Manager::class);
+    }
 }

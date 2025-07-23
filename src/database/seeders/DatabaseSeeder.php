@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ClubSeeder::class,
             PlayerSeeder::class,
+            ManagerSeeder::class,
         ]);
     }
 }
